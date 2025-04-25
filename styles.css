@@ -637,3 +637,480 @@ section + #franchise {
     padding: 3.5rem;
   }
 }
+
+/*-----------------------------------*\
+  #beneficiaries
+\*-----------------------------------*/
+
+.beneficiariesSection {
+  padding: 6rem 1.25rem;
+  background-color: var(--color-light);
+  position: relative;
+}
+
+.beneficiariesSection .sectionTitle {
+  text-align: center;
+  margin-bottom: 4rem;
+}
+
+.beneficiariesGrid {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 4rem;
+  max-width: 90rem;
+  margin: 0 auto;
+}
+
+.beneficiaryCard {
+  background-color: var(--color-gray);
+  border-radius: var(--border-radius-lg);
+  overflow: hidden;
+  box-shadow: var(--shadow-lg);
+  transition: all 0.3s ease;
+}
+
+.beneficiaryCard:hover {
+  transform: translateY(-0.5rem);
+  box-shadow: 0 1rem 2rem rgba(0, 0, 0, 0.15);
+}
+
+.beneficiaryImage {
+  width: 100%;
+  height: 25rem;
+  overflow: hidden;
+}
+
+.beneficiaryImage img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 0.5s ease;
+}
+
+.beneficiaryCard:hover .beneficiaryImage img {
+  transform: scale(1.05);
+}
+
+.beneficiaryContent {
+  padding: 2.5rem;
+}
+
+.beneficiaryContent h3 {
+  color: var(--color-dark);
+  font-size: 1.75rem;
+  margin-bottom: 1.5rem;
+  font-family: var(--font-primary);
+}
+
+.mainDescription {
+  color: var(--color-text);
+  line-height: 1.8;
+  margin-bottom: 2rem;
+  font-size: 1.125rem;
+}
+
+.challenges,
+.benefits {
+  margin-bottom: 2rem;
+}
+
+.challenges h4,
+.benefits h4 {
+  color: var(--color-dark);
+  font-size: 1.25rem;
+  margin-bottom: 1rem;
+  font-family: var(--font-primary);
+}
+
+.challenges ul,
+.benefits ul {
+  list-style: none;
+  padding: 0;
+}
+
+.challenges li,
+.benefits li {
+  color: var(--color-text);
+  line-height: 1.6;
+  margin-bottom: 0.75rem;
+  padding-left: 1.5rem;
+  position: relative;
+}
+
+.challenges li:before,
+.benefits li:before {
+  content: "•";
+  color: var(--color-accent);
+  position: absolute;
+  left: 0;
+  font-size: 1.25rem;
+}
+
+.statistic {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+  padding-top: 1.5rem;
+  border-top: 1px solid var(--color-gray-dark);
+  margin-top: 2rem;
+}
+
+.statNumber {
+  color: var(--color-accent);
+  font-size: 2rem;
+  font-weight: 700;
+  font-family: var(--font-primary);
+}
+
+.statText {
+  color: var(--color-text);
+  font-size: 1rem;
+  line-height: 1.4;
+}
+
+.impactMessage {
+  text-align: center;
+  max-width: 60rem;
+  margin: 4rem auto 0;
+  padding: 2rem;
+  background-color: var(--color-primary);
+  border-radius: var(--border-radius-lg);
+}
+
+.impactMessage p {
+  color: var(--color-dark);
+  font-size: 1.25rem;
+  line-height: 1.6;
+  font-family: var(--font-primary);
+  font-weight: 500;
+}
+
+@media (min-width: 768px) {
+  .beneficiariesGrid {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 4rem;
+  }
+
+  .beneficiaryImage {
+    height: 30rem;
+  }
+
+  .beneficiaryContent {
+    padding: 3rem;
+  }
+
+  .beneficiaryContent h3 {
+    font-size: 2rem;
+  }
+
+  .statNumber {
+    font-size: 2.5rem;
+  }
+
+  .impactMessage {
+    padding: 3rem;
+  }
+
+  .impactMessage p {
+    font-size: 1.5rem;
+  }
+}
+
+@media (min-width: 1280px) {
+  .beneficiariesSection {
+    padding: 8rem 1.25rem;
+  }
+
+  .beneficiariesGrid {
+    gap: 5rem;
+  }
+
+  .beneficiaryImage {
+    height: 35rem;
+  }
+
+  .beneficiaryContent {
+    padding: 4rem;
+  }
+
+  .mainDescription {
+    font-size: 1.25rem;
+  }
+
+  .challenges h4,
+  .benefits h4 {
+    font-size: 1.5rem;
+  }
+
+  .challenges li,
+  .benefits li {
+    font-size: 1.125rem;
+  }
+}
+
+/*-----------------------------------*\
+  #testimonials
+\*-----------------------------------*/
+
+.testimonialsSection {
+  padding: 6rem 1.25rem;
+  background-color: var(--color-gray);
+  position: relative;
+}
+
+.testimonialsSection .sectionTitle {
+  text-align: center;
+  margin-bottom: 4rem;
+}
+
+.testimonialsGrid {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 3rem;
+  max-width: 90rem;
+  margin: 0 auto;
+}
+
+.testimonialCard {
+  background-color: var(--color-light);
+  border-radius: var(--border-radius-lg);
+  overflow: hidden;
+  box-shadow: var(--shadow-lg);
+  transition: all 0.3s ease;
+}
+
+.testimonialCard:hover {
+  transform: translateY(-0.5rem);
+  box-shadow: 0 1rem 2rem rgba(0, 0, 0, 0.15);
+}
+
+.testimonialImage {
+  width: 100%;
+  height: 20rem;
+  overflow: hidden;
+}
+
+.testimonialImage img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 0.5s ease;
+}
+
+.testimonialCard:hover .testimonialImage img {
+  transform: scale(1.05);
+}
+
+.testimonialContent {
+  padding: 2.5rem;
+}
+
+.testimonialQuote {
+  position: relative;
+  margin-bottom: 2rem;
+}
+
+.testimonialQuote i {
+  color: var(--color-accent);
+  font-size: 2rem;
+  position: absolute;
+  top: -1rem;
+  left: -1rem;
+  opacity: 0.2;
+}
+
+.testimonialQuote p {
+  color: var(--color-text);
+  line-height: 1.8;
+  font-size: 1.125rem;
+  font-style: italic;
+  position: relative;
+  z-index: 1;
+}
+
+.testimonialInfo {
+  border-top: 1px solid var(--color-gray-dark);
+  padding-top: 1.5rem;
+}
+
+.testimonialInfo h4 {
+  color: var(--color-dark);
+  font-size: 1.25rem;
+  margin-bottom: 0.5rem;
+  font-family: var(--font-primary);
+}
+
+.testimonialMeta {
+  color: var(--color-text);
+  font-size: 0.875rem;
+  opacity: 0.8;
+}
+
+@media (min-width: 768px) {
+  .testimonialsGrid {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 3rem;
+  }
+
+  .testimonialImage {
+    height: 25rem;
+  }
+
+  .testimonialContent {
+    padding: 3rem;
+  }
+
+  .testimonialQuote p {
+    font-size: 1.25rem;
+  }
+
+  .testimonialInfo h4 {
+    font-size: 1.5rem;
+  }
+}
+
+@media (min-width: 1280px) {
+  .testimonialsSection {
+    padding: 8rem 1.25rem;
+  }
+
+  .testimonialsGrid {
+    gap: 4rem;
+  }
+
+  .testimonialImage {
+    height: 30rem;
+  }
+
+  .testimonialContent {
+    padding: 4rem;
+  }
+}
+
+/*-----------------------------------*\
+  #download
+\*-----------------------------------*/
+
+.downloadSection {
+  padding: 6rem 1.25rem;
+  background-color: var(--color-accent);
+  position: relative;
+  color: var(--color-light);
+}
+
+.downloadContent {
+  max-width: 60rem;
+  margin: 0 auto;
+  text-align: center;
+}
+
+.downloadSection .sectionTitle {
+  color: var(--color-light);
+  margin-bottom: 1.5rem;
+  font-size: 2.5rem;
+}
+
+.downloadDescription {
+  font-size: 1.25rem;
+  line-height: 1.6;
+  margin-bottom: 3rem;
+  opacity: 0.9;
+}
+
+.downloadButtons {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-bottom: 3rem;
+}
+
+.storeButton {
+  display: inline-block;
+  transition: transform 0.3s ease;
+  width: 20rem;
+  max-width: 100%;
+}
+
+.storeButton:hover {
+  transform: translateY(-0.25rem);
+}
+
+.storeButton img {
+  width: 100%;
+  height: auto;
+  object-fit: contain;
+}
+
+.backToTop {
+  position: fixed;
+  bottom: 2rem;
+  right: 2rem;
+  display: none;
+  align-items: center;
+  justify-content: center;
+  gap: 0.5rem;
+  color: var(--color-light);
+  font-size: 1rem;
+  padding: 0.75rem 1.5rem;
+  background-color: var(--color-accent);
+  border: none;
+  border-radius: var(--border-radius-md);
+  cursor: pointer;
+  transition: all 0.3s ease;
+  z-index: 1000;
+  box-shadow: var(--shadow-lg);
+}
+
+.backToTop:hover {
+  transform: translateY(-0.25rem);
+  background-color: var(--color-dark);
+}
+
+.backToTop i {
+  font-size: 1.25rem;
+}
+
+.backToTop.visible {
+  display: flex;
+}
+
+@media (min-width: 768px) {
+  .downloadSection {
+    padding: 8rem 1.25rem;
+  }
+
+  .downloadSection .sectionTitle {
+    font-size: 3rem;
+  }
+
+  .downloadDescription {
+    font-size: 1.5rem;
+    margin-bottom: 4rem;
+  }
+
+  .downloadButtons {
+    justify-content: center;
+  }
+
+  .storeButton {
+    width: 24rem;
+  }
+}
+
+@media (min-width: 1280px) {
+  .downloadSection {
+    padding: 10rem 1.25rem;
+  }
+
+  .downloadSection .sectionTitle {
+    font-size: 3.5rem;
+  }
+
+  .downloadDescription {
+    font-size: 1.75rem;
+  }
+
+  .storeButton {
+    width: 28rem;
+  }
+}
