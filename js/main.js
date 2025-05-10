@@ -1,4 +1,4 @@
-// Smooth scroll para todos los enlaces internos
+// smooth scroll para todos los enlaces internos
 document.querySelectorAll('a[href^="#"]').forEach(anchor => {
   anchor.addEventListener('click', function (e) {
     e.preventDefault();
@@ -14,10 +14,10 @@ document.querySelectorAll('a[href^="#"]').forEach(anchor => {
   });
 });
 
-// Botón de volver al inicio
+// boton de volver al inicio
 const backToTopButton = document.getElementById('backToTop');
 
-// Función para mostrar/ocultar el botón
+// funcion para mostrar/ocultar el botón
 function toggleBackToTopButton() {
   if (window.scrollY > 300) {
     backToTopButton.classList.add('visible');
@@ -26,10 +26,10 @@ function toggleBackToTopButton() {
   }
 }
 
-// Evento de scroll
+// evento de scroll
 window.addEventListener('scroll', toggleBackToTopButton);
 
-// Evento de click en el botón
+// evento de click en el boton
 backToTopButton.addEventListener('click', () => {
   window.scrollTo({
     top: 0,
@@ -37,5 +37,22 @@ backToTopButton.addEventListener('click', () => {
   });
 });
 
-// Inicializar el estado del botón
 toggleBackToTopButton(); 
+
+// inicializa el boton al cargar la página en mobile
+const mobileMenuToggle = document.querySelector('.mobileMenuToogle');
+const mobileMenu = document.querySelector('.mobileMenu');
+
+// evento de click en el boton de menu mobile
+mobileMenuToggle.addEventListener('click', () => {
+  mobileMenuToggle.classList.toggle('active');
+  mobileMenu.classList.toggle('active');
+});
+
+//cerrar el menu mobile al hacer click en un enlace
+mobileMenu.addEventListener('click', (e) => {
+  if (e.target.tagName === 'A') {
+    mobileMenuToggle.classList.remove('active');
+    mobileMenu.classList.remove('active');
+  }
+});
