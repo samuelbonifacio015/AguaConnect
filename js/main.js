@@ -14,10 +14,10 @@ document.querySelectorAll('a[href^="#"]').forEach(anchor => {
   });
 });
 
-// Botón de volver al inicio
+// Boton de volver al inicio
 const backToTopButton = document.getElementById('backToTop');
 
-// Función para mostrar/ocultar el botón
+// Funcion para mostrar/ocultar el boton
 function toggleBackToTopButton() {
   if (window.scrollY > 300) {
     backToTopButton.classList.add('visible');
@@ -29,7 +29,7 @@ function toggleBackToTopButton() {
 // Evento de scroll
 window.addEventListener('scroll', toggleBackToTopButton);
 
-// Evento de click en el botón
+// Evento de click en el boton
 backToTopButton.addEventListener('click', () => {
   window.scrollTo({
     top: 0,
@@ -37,5 +37,23 @@ backToTopButton.addEventListener('click', () => {
   });
 });
 
-// Inicializar el estado del botón
-toggleBackToTopButton(); 
+// Inicializar el estado del boton
+toggleBackToTopButton();
+
+// Funcionalidad menu hamburguesa
+const mobileMenuToggle = document.querySelector('.mobileMenuToogle');
+const mobileMenu = document.querySelector('.mobileMenu');
+
+if (mobileMenuToggle && mobileMenu) {
+  mobileMenuToggle.addEventListener('click', () => {
+    mobileMenu.classList.toggle('active');
+    mobileMenuToggle.classList.toggle('active');
+  });
+  // Cerrar menu al hacer click en un enlace
+  mobileMenu.querySelectorAll('a').forEach(link => {
+    link.addEventListener('click', () => {
+      mobileMenu.classList.remove('active');
+      mobileMenuToggle.classList.remove('active');
+    });
+  });
+} 
