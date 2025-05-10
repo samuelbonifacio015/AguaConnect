@@ -457,7 +457,6 @@ img {
   font-size: 1.25rem;
 }
 
-/* para eliminar padding entre hero y franchise */
 .heroSection + .franchiseSection,
 section + #franchise {
   margin-top: -100px;
