@@ -120,6 +120,16 @@ img {
     display: none;
   }
 
+  .mobileMenu{
+    padding: 2rem 1rem;
+  }
+
+  .mobileMenu a{
+    font-size: 2.2rem;
+    color: var(--font-secondary);
+    margin: 1.5rem 0;
+  }
+
 .mobileMenuToogle {
     display: block;
   }
@@ -235,6 +245,14 @@ img {
   object-fit: cover;
 }
 
+@media(max-width: 768px) {
+  .mainImageContainer img {
+    width: 100%;
+    object-fit: cover;
+    height: auto;
+  }
+}
+
 .heroContent {
   position: relative;
   z-index: 2;
@@ -258,6 +276,23 @@ img {
   text-transform: uppercase;
   padding-top: 4rem;
   letter-spacing: -0.01em;
+}
+
+@media (max-width: 768px) {
+  .heroTitle {
+    font-size: 2.5rem;
+    padding-top: 0;
+  }
+
+  .heroSubtitle {
+    font-size: 1.25rem;
+  }
+
+  .primaryButton,
+  .secondaryButton {
+    padding: 0.5rem 1.5rem;
+    font-size: 0.875rem;
+  }
 }
 
 .accent {
@@ -384,6 +419,16 @@ img {
   margin-bottom: 1.5rem;
   color: var(--color-dark);
   line-height: 1.2;
+}
+
+@media(max-width: 768px) {
+  .sectionTitle {
+    font-size: 2.5rem;
+  }
+
+  .sectionContainer{
+    padding: 1rem;
+  }
 }
 
 .sectionTitle .accent {
