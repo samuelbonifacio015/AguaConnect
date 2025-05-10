@@ -116,82 +116,10 @@ img {
   }
 }
 
-@media (max-width: 399px) {
-  html {
-    font-size: 13px;
-  }
-  .headerContent {
-    padding: 0.3rem 0.5rem;
-  }
-  .logoContainer {
-    width: 5.5rem;
-  }
-  .heroTitle {
-    font-size: 1.5rem;
-    padding-top: 0.5rem;
-  }
-  .heroSubtitle {
-    font-size: 1rem;
-  }
-  .sectionTitle {
-    font-size: 1.5rem;
-  }
-  .sectionDescription, .mainDescription, .downloadDescription {
-    font-size: 1rem;
-  }
-  .primaryButton, .secondaryButton {
-    padding: 0.4rem 0.7rem;
-    font-size: 0.8rem;
-  }
-  .mobileMenu a {
-    font-size: 1.2rem;
-    margin: 0.7rem 0;
-  }
-  .valueCard {
-    padding: 1.2rem;
-  }
-  .beneficiaryContent, .testimonialContent {
-    padding: 1rem;
-  }
-  .beneficiaryImage, .testimonialImage {
-    height: 10rem;
-  }
-  .featuresGrid, .beneficiariesGrid, .testimonialsGrid {
-    gap: 1rem;
-  }
-  .storeButton {
-    width: 10rem;
-  }
-  .backToTop {
-    bottom: 1rem;
-    right: 1rem;
-    padding: 0.5rem 1rem;
-    font-size: 0.8rem;
-  }
-  .mobileMenuToogle {
-    padding: 0.5rem 0.7rem;
-    margin-left: 0.2rem;
-  }
-  .mobileMenuToogle i {
-    font-size: 1.5rem;
-  }
-}
-
-@media (max-width: 768px) {
+@media (max-width: 800px) {
   .desktopMenu {
     display: none;
   }
-
-  .mobileMenu{
-    padding: 2rem 1rem;
-  }
-
-  .mobileMenu a{
-    font-size: 2.2rem;
-    color: var(--font-secondary);
-    margin: 1.5rem 0;
-  }
-
   .mobileMenuToogle {
     position: fixed;
     top: 1rem;
@@ -200,6 +128,17 @@ img {
     background: var(--color-light);
     border-radius: 50%;
     box-shadow: 0 2px 8px rgba(0,0,0,0.07);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+  .mobileMenu{
+    padding: 2rem 1rem;
+  }
+  .mobileMenu a{
+    font-size: 2.2rem;
+    color: var(--font-secondary);
+    margin: 1.5rem 0;
   }
 }
 
