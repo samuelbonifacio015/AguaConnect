@@ -44,7 +44,6 @@ _Empoderar a las comunidades con tecnología para transformar la gestión del ag
 ### 🏠 **Hero Section**
 
 - Imagen de impacto con overlay
-- Call-to-action principal
 - Navegación responsive
 
 ### 🏢 **Acerca de Nosotros**
@@ -151,8 +150,7 @@ _Empoderar a las comunidades con tecnología para transformar la gestión del ag
 ### 🎭 **Efectos y Animaciones**
 
 - Hover effects en todas las tarjetas
-- Transiciones suaves (0.3s ease)
-- Transformaciones 3D en imágenes
+- Transiciones suaves 
 - Acordeón FAQ completamente funcional
 
 ### 🔧 **JavaScript Implementado**
@@ -226,6 +224,173 @@ AguaConnect/
 - ✅ **Sección "Nuestra Historia"** con misión, visión y valores
 - ✅ **Sección de funcionalidades** con tarjetas interactivas
 - ✅ **Implementación responsive** básica
+
+---
+# Sistema de Autenticación AguaConnect
+
+## 📋 Descripción
+
+Se ha implementado un sistema completo de autenticación para AguaConnect que incluye registro de usuarios, inicio de sesión y gestión de sesiones. El sistema está diseñado para ser completamente responsive y funcional en todos los dispositivos.
+
+## 🚀 Características Implementadas
+
+### ✅ Página de Autenticación (`auth.html`)
+
+- **Formulario de Inicio de Sesión**
+
+  - Campo de usuario o correo electrónico
+  - Campo de contraseña con opción de mostrar/ocultar
+  - Checkbox "Recordarme"
+  - Enlace para recuperar contraseña
+  - Validación en tiempo real
+
+- **Formulario de Registro**
+  - Campos: Nombres, Apellidos, Usuario/Correo, Contraseña, Confirmar Contraseña
+  - Validación de contraseñas coincidentes
+  - Validación de fortaleza de contraseña (mínimo 6 caracteres)
+  - Verificación de usuarios duplicados
+  - Checkbox obligatorio para términos y condiciones
+
+### ✅ Icono de Usuario en el Menú Principal
+
+- **Menú Desktop**
+
+  - Icono de usuario al lado derecho del menú "Descarga"
+  - Dropdown con opciones de "Iniciar Sesión" y "Registrarse" (usuarios no autenticados)
+  - Información del usuario y botón "Cerrar Sesión" (usuarios autenticados)
+
+- **Menú Móvil**
+  - Botones de autenticación integrados en el menú hamburguesa
+  - Información del usuario con avatar y botón de logout
+
+## 🎨 Diseño Responsive
+
+### Desktop (1024px+)
+
+- Icono de usuario circular con efecto hover
+- Dropdown elegante con animaciones suaves
+- Diseño consistente con la paleta de colores de AguaConnect
+
+### Tablet (640px - 1023px)
+
+- Adaptación del icono de usuario
+- Dropdown optimizado para pantallas medianas
+
+### Mobile (< 640px)
+
+- Icono de usuario oculto en favor del menú móvil
+- Botones de autenticación integrados en el menú hamburguesa
+- Formularios optimizados para pantallas pequeñas
+
+## ⚙️ Funcionalidades JavaScript
+
+### Gestión de Usuarios
+
+- **Almacenamiento Local**: Los usuarios se guardan en `localStorage`
+- **Validación en Tiempo Real**: Verificación inmediata de campos
+- **Gestión de Sesiones**: Persistencia de sesión entre páginas
+- **Estados de Carga**: Indicadores visuales durante el proceso de autenticación
+
+### Validaciones Implementadas
+
+- ✅ Campos obligatorios
+- ✅ Formato de contraseña (mínimo 6 caracteres)
+- ✅ Coincidencia de contraseñas
+- ✅ Verificación de usuarios duplicados
+- ✅ Aceptación de términos y condiciones
+
+### Funcionalidades de Seguridad
+
+- ✅ Mostrar/ocultar contraseñas
+- ✅ Validación de sesión
+- ✅ Logout seguro con confirmación
+- ✅ Limpieza de formularios
+
+## 🔧 Archivos Modificados/Creados
+
+### Nuevos Archivos
+
+1. **`auth.html`** - Página de autenticación completa
+2. **`js/auth.js`** - Lógica de autenticación
+3. **`AUTHENTICATION.md`** - Esta documentación
+
+### Archivos Modificados
+
+1. **`index.html`** - Agregado icono de usuario y menús
+2. **`styles.css`** - Estilos para autenticación y menús de usuario
+3. **`js/main.js`** - Gestión de sesiones en página principal
+
+## 🎯 Cómo Usar el Sistema
+
+### Para Usuarios Nuevos:
+
+1. Hacer clic en el icono de usuario o botón "Registrarse"
+2. Completar el formulario de registro
+3. Aceptar términos y condiciones
+4. Crear cuenta exitosamente
+5. Ser redirigido al formulario de login
+
+### Para Usuarios Existentes:
+
+1. Hacer clic en "Iniciar Sesión"
+2. Ingresar usuario/correo y contraseña
+3. Iniciar sesión exitosamente
+4. Ver información del usuario en el menú
+
+### Para Cerrar Sesión:
+
+1. Hacer clic en el icono de usuario (cuando está logueado)
+2. Seleccionar "Cerrar Sesión"
+3. Confirmar la acción
+
+## 💾 Estructura de Datos
+
+### Usuario Almacenado
+
+```javascript
+{
+  id: "timestamp_unique_id",
+  firstName: "Nombre",
+  lastName: "Apellido",
+  username: "usuario_o_email",
+  email: "email@dominio.com",
+  password: "contraseña_hasheada", // En producción debería estar hasheada
+  createdAt: "2024-01-01T00:00:00.000Z"
+}
+```
+
+### Sesión Actual
+
+```javascript
+{
+  id: "user_id",
+  firstName: "Nombre",
+  lastName: "Apellido",
+  username: "usuario",
+  email: "email@dominio.com"
+}
+```
+
+### Implementado
+
+- ✅ Validación del lado del cliente
+- ✅ Gestión de sesiones local
+- ✅ Verificación de usuarios duplicados
+- ✅ Limpieza de datos de entrada
+
+## 🎨 Paleta de Colores Utilizada
+
+- **Primary**: `#ccedfc` (Azul claro)
+- **Secondary**: `#1cb4d4` (Azul medio)
+- **Accent**: `#00bab3` (Verde agua)
+- **Dark**: `#071d49` (Azul oscuro)
+- **Light**: `#ffffff` (Blanco)
+
+---
+
+**Desarrollado por:** Grupo 4  
+**Proyecto:** AguaConnect - Sistema de Gestión del Agua  
+**Fecha:** Enero 2025
 
 ---
 

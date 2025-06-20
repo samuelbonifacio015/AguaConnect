@@ -52,8 +52,38 @@
             <div class="logoContainer">
               <img src="assets/logos/aguaconnect.png" alt="logo" />
             </div>
-            <div class="mobileMenuToogle">
-              <i class="fas fa-bars"></i>
+            <div class="mobileControls">
+              <div class="mobileUserIcon" id="mobileUserToggle">
+                <i class="fas fa-user"></i>
+                <div class="mobileUserDropdown" id="mobileUserDropdown">
+                  <div class="mobileAuthButtons" id="mobileAuthButtonsHeader">
+                    <a href="auth.html" class="mobileLoginBtn">
+                      <i class="fas fa-sign-in-alt"></i>
+                      Iniciar Sesión
+                    </a>
+                    <a href="auth.html" class="mobileRegisterBtn">
+                      <i class="fas fa-user-plus"></i>
+                      Registrarse
+                    </a>
+                  </div>
+                  <div class="mobileUserMenu" id="mobileUserMenuHeader" style="display: none;">
+                    <div class="mobileUserInfo">
+                      <i class="fas fa-user-circle"></i>
+                      <div class="mobileUserDetails">
+                        <span class="mobileUserName" id="mobileUserNameHeader"></span>
+                        <span class="mobileUserEmail" id="mobileUserEmailHeader"></span>
+                      </div>
+                    </div>
+                    <button class="mobileLogoutBtn" id="mobileLogoutBtnHeader">
+                      <i class="fas fa-sign-out-alt"></i>
+                      Cerrar Sesión
+                    </button>
+                  </div>
+                </div>
+              </div>
+              <div class="mobileMenuToogle">
+                <i class="fas fa-bars"></i>
+              </div>
             </div>
             <nav class="desktopMenu">
               <a href="#about" class="navLink">Acerca de Nosotros</a>
@@ -62,6 +92,26 @@
               <a href="#testimonials" class="navLink">Testimonios</a>
               <a href="#support" class="navLink">Soporte</a>
               <a href="#download" class="navLink">Descarga</a>
+              <div class="userSection">
+                <div class="userIcon" id="userMenuToggle">
+                  <i class="fas fa-user"></i>
+                  <span class="userGreeting" id="userGreeting" style="display: none;"></span>
+                </div>
+                <div class="userDropdown" id="userDropdown">
+                  <div class="authButtons" id="authButtons">
+                    <a href="auth.html" class="loginBtn" id="loginBtn">Iniciar Sesión</a>
+                    <a href="auth.html" class="registerBtn" id="registerBtn">Registrarse</a>
+                  </div>
+                  <div class="userMenu" id="userMenu" style="display: none;">
+                    <div class="userInfo">
+                      <span class="userName" id="userNameDisplay"></span>
+                      <span class="userEmail" id="userEmailDisplay"></span>
+                    </div>
+                    <hr>
+                    <button class="logoutBtn" id="logoutBtn">Cerrar Sesión</button>
+                  </div>
+                </div>
+              </div>
             </nav>
             <!-- Menu mobile -->
             <nav class="mobileMenu">
@@ -71,6 +121,31 @@
               <a href="#testimonials" class="navLink">Testimonios</a>
               <a href="#support" class="navLink">Soporte</a>
               <a href="#download" class="navLink">Descarga</a>
+              <div class="mobileUserSection">
+                <div class="mobileAuthButtons" id="mobileAuthButtons">
+                  <a href="auth.html" class="mobileLoginBtn">
+                    <i class="fas fa-sign-in-alt"></i>
+                    Iniciar Sesión
+                  </a>
+                  <a href="auth.html" class="mobileRegisterBtn">
+                    <i class="fas fa-user-plus"></i>
+                    Registrarse
+                  </a>
+                </div>
+                <div class="mobileUserMenu" id="mobileUserMenu" style="display: none;">
+                  <div class="mobileUserInfo">
+                    <i class="fas fa-user-circle"></i>
+                    <div class="mobileUserDetails">
+                      <span class="mobileUserName" id="mobileUserNameDisplay"></span>
+                      <span class="mobileUserEmail" id="mobileUserEmailDisplay"></span>
+                    </div>
+                  </div>
+                  <button class="mobileLogoutBtn" id="mobileLogoutBtn">
+                    <i class="fas fa-sign-out-alt"></i>
+                    Cerrar Sesión
+                  </button>
+                </div>
+              </div>
             </nav>
           </div>
         </header>
@@ -656,21 +731,21 @@
               <h4>Preferencias de Notificación</h4>
               <div class="settingItem">
                 <label class="switch">
-                  <input type="checkbox" id="emailNotifications" checked />
+                  <input type="checkbox" id="emailNotifications" checked title="Activar/desactivar notificaciones por correo" />
                   <span class="slider"></span>
                 </label>
                 <span>Recibir notificaciones por correo</span>
               </div>
               <div class="settingItem">
                 <label class="switch">
-                  <input type="checkbox" id="pushNotifications" checked />
+                  <input type="checkbox" id="pushNotifications" checked title="Activar/desactivar notificaciones push" />
                   <span class="slider"></span>
                 </label>
                 <span>Notificaciones push</span>
               </div>
               <div class="settingItem">
                 <label class="switch">
-                  <input type="checkbox" id="alertNotifications" checked />
+                  <input type="checkbox" id="alertNotifications" checked title="Activar/desactivar alertas de emergencia" />
                   <span class="slider"></span>
                 </label>
                 <span>Alertas de emergencia</span>

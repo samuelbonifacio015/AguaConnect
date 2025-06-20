@@ -1,0 +1,242 @@
+<!DOCTYPE html>
+<html lang="es">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>AguaConnect - Autenticacion</title>
+    <link rel="icon" href="Assets/Favicon/favicon.ico" type="image/x-icon" />
+    <link rel="stylesheet" href="styles.css" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Big+Shoulders:opsz,wght@10..72,100..900&family=Montserrat:wght@300;400;500;600;700&display=swap"
+      rel="stylesheet"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css"
+    />
+  </head>
+
+  <body class="authBody">
+    <!-- Encabezado simplificado -->
+    <header class="authHeader">
+      <div class="authHeaderContent">
+        <div class="logoContainer">
+          <img src="assets/logos/aguaconnect.png" alt="AguaConnect Logo" />
+        </div>
+        <nav class="authNav">
+          <a href="index.html" class="backLink">
+            <i class="fas fa-arrow-left"></i>
+            Volver al inicio
+          </a>
+        </nav>
+      </div>
+    </header>
+
+    <!-- Contenedor principal de autenticacion -->
+    <main class="authMain">
+      <div class="authContainer">
+        <!-- Formulario de Inicio de Sesion -->
+        <div class="authForm loginForm active" id="loginForm">
+          <div class="authCard">
+            <div class="authHeader">
+              <h2>Iniciar Sesion</h2>
+              <p>Accede a tu cuenta de AguaConnect</p>
+            </div>
+
+            <form class="authFormContent" id="loginFormElement">
+              <div class="formGroup">
+                <label for="loginEmail">Usuario o correo</label>
+                <input
+                  type="text"
+                  id="loginEmail"
+                  name="loginEmail"
+                  placeholder="Ingresa tu usuario o correo"
+                  required
+                />
+                <i class="fas fa-user formIcon"></i>
+              </div>
+
+              <div class="formGroup">
+                <label for="loginPassword">Contrasena</label>
+                <input
+                  type="password"
+                  id="loginPassword"
+                  name="loginPassword"
+                  placeholder="Ingresa tu contrasena"
+                  required
+                />
+                <i class="fas fa-lock formIcon"></i>
+                <button
+                  type="button"
+                  class="togglePassword"
+                  data-target="loginPassword"
+                  title="Mostrar/ocultar contrasena"
+                >
+                  <i class="fas fa-eye"></i>
+                </button>
+              </div>
+
+              <div class="formOptions">
+                <label class="checkboxLabel">
+                  <input type="checkbox" id="rememberMe" />
+                  <span class="checkmark"></span>
+                  Recordarme
+                </label>
+                <a href="#" class="forgotPassword">Recuperar Contrasena</a>
+              </div>
+
+              <button type="submit" class="authButton loginButton">
+                Iniciar Sesion
+              </button>
+            </form>
+
+            <div class="authFooter">
+              <p>
+                ¿No tienes cuenta?
+                <button type="button" class="switchForm" data-target="register">
+                  Crear Cuenta
+                </button>
+              </p>
+            </div>
+          </div>
+        </div>
+
+        <!-- Formulario de Registro -->
+        <div class="authForm registerForm" id="registerForm">
+          <div class="authCard">
+            <div class="authHeader">
+              <h2>Crear Cuenta</h2>
+              <p>Unete a la comunidad AguaConnect</p>
+            </div>
+
+            <form class="authFormContent" id="registerFormElement">
+              <div class="formRow">
+                <div class="formGroup">
+                  <label for="firstName">Nombres</label>
+                  <input
+                    type="text"
+                    id="firstName"
+                    name="firstName"
+                    placeholder="Tus nombres"
+                    required
+                  />
+                  <i class="fas fa-user formIcon"></i>
+                </div>
+
+                <div class="formGroup">
+                  <label for="lastName">Apellidos</label>
+                  <input
+                    type="text"
+                    id="lastName"
+                    name="lastName"
+                    placeholder="Tus apellidos"
+                    required
+                  />
+                  <i class="fas fa-user formIcon"></i>
+                </div>
+              </div>
+
+              <div class="formGroup">
+                <label for="username">Usuario o correo</label>
+                <input
+                  type="text"
+                  id="username"
+                  name="username"
+                  placeholder="Elige un nombre de usuario o usa tu correo"
+                  required
+                />
+                <i class="fas fa-at formIcon"></i>
+              </div>
+
+              <div class="formGroup">
+                <label for="registerPassword">Contrasena</label>
+                <input
+                  type="password"
+                  id="registerPassword"
+                  name="registerPassword"
+                  placeholder="Crea una contrasena segura"
+                  required
+                />
+                <i class="fas fa-lock formIcon"></i>
+                <button
+                  type="button"
+                  class="togglePassword"
+                  data-target="registerPassword"
+                  title="Mostrar/ocultar contrasena"
+                >
+                  <i class="fas fa-eye"></i>
+                </button>
+              </div>
+
+              <div class="formGroup">
+                <label for="confirmPassword">Confirmar contrasena</label>
+                <input
+                  type="password"
+                  id="confirmPassword"
+                  name="confirmPassword"
+                  placeholder="Confirma tu contrasena"
+                  required
+                />
+                <i class="fas fa-lock formIcon"></i>
+                <button
+                  type="button"
+                  class="togglePassword"
+                  data-target="confirmPassword"
+                  title="Mostrar/ocultar contrasena"
+                >
+                  <i class="fas fa-eye"></i>
+                </button>
+              </div>
+
+              <div class="formOptions">
+                <label class="checkboxLabel">
+                  <input type="checkbox" id="acceptTerms" required />
+                  <span class="checkmark"></span>
+                  Acepto los
+                  <a href="#terms" class="termsLink">Terminos y condiciones</a>
+                </label>
+              </div>
+
+              <button type="submit" class="authButton registerButton">
+                Registrarse
+              </button>
+            </form>
+
+            <div class="authFooter">
+              <p>
+                ¿Ya tienes cuenta?
+                <button type="button" class="switchForm" data-target="login">
+                  Iniciar Sesion
+                </button>
+              </p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </main>
+
+    <!-- Modal de exito -->
+    <div class="modal" id="successModal">
+      <div class="modalContent">
+        <div class="modalHeader">
+          <i class="fas fa-check-circle successIcon"></i>
+          <h3 id="modalTitle">¡Bienvenido!</h3>
+        </div>
+        <div class="modalBody">
+          <p id="modalMessage">Has iniciado sesion exitosamente.</p>
+        </div>
+        <div class="modalFooter">
+          <button class="primaryButton" id="modalCloseBtn">Continuar</button>
+        </div>
+      </div>
+    </div>
+
+    <!-- Overlay del modal -->
+    <div class="modalOverlay" id="modalOverlay"></div>
+
+    <!-- Script de autenticacion -->
+    <script src="js/auth.js"></script>
+  </body>
+</html>
