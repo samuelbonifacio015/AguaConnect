@@ -56,4 +56,64 @@ if (mobileMenuToggle && mobileMenu) {
       mobileMenuToggle.classList.remove('active');
     });
   });
-} 
+}
+
+// Funcionalidad FAQ 
+document.querySelectorAll('.faqQuestion').forEach(question => {
+  question.addEventListener('click', () => {
+    const faqCard = question.parentElement;
+    const isActive = faqCard.classList.contains('active');
+    
+    document.querySelectorAll('.faqCard').forEach(card => {
+      card.classList.remove('active');
+    });
+    
+    if (!isActive) {
+      faqCard.classList.add('active');
+    }
+  });
+});
+
+// Funcionalidad del formulario de feedback
+const feedbackForm = document.querySelector('.feedbackForm');
+if (feedbackForm) {
+  feedbackForm.addEventListener('submit', (e) => {
+    e.preventDefault();
+    
+    const email = document.getElementById('email').value;
+    const subject = document.getElementById('subject').value;
+    const message = document.getElementById('message').value;
+    
+    if (email && subject && message) {
+      // Simular envio de feedback
+      alert('¡Gracias por tu feedback! Nos pondremos en contacto contigo pronto.');
+      feedbackForm.reset();
+    } else {
+      alert('Por favor, completa todos los campos obligatorios.');
+    }
+  });
+}
+
+// Funcionalidad para gestionar preferencias de notificacion
+const notificationSwitches = document.querySelectorAll('.notificationSettings input[type="checkbox"]');
+notificationSwitches.forEach(switchElement => {
+  switchElement.addEventListener('change', () => {
+    const settingName = switchElement.id;
+    const isEnabled = switchElement.checked;
+    
+    // Simular guardado de configuracion
+    console.log(`Configuracion ${settingName}: ${isEnabled ? 'activada' : 'desactivada'}`);
+    
+    // Mostrar feedback visual (opcional)
+    const settingItem = switchElement.closest('.settingItem');
+    settingItem.style.opacity = '0.7';
+    setTimeout(() => {
+      settingItem.style.opacity = '1';
+    }, 200);
+  });
+});
+
+// Funciones para terminos y condiciones
+function showTermsModal() {
+  alert('Aquí se mostraría el modal con los términos y condiciones completos.');
+}
