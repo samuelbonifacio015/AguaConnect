@@ -43,20 +43,43 @@ backToTopButton.addEventListener('click', () => {
 toggleBackToTopButton();
 
 // Menu hamburguesa para navegacion movil
-const mobileMenuToggle = document.querySelector('.mobileMenuToogle');
+const mobileMenuToggle = document.querySelector('.mobileMenuToggle');
 const mobileMenu = document.querySelector('.mobileMenu');
 
 if (mobileMenuToggle && mobileMenu) {
-  mobileMenuToggle.addEventListener('click', () => {
+  // Crear boton de cierre
+  const closeButton = document.createElement('div');
+  closeButton.className = 'mobileMenuClose';
+  closeButton.innerHTML = '<i class="fas fa-times"></i>';
+  mobileMenu.appendChild(closeButton);
+
+  // Funcion para abrir/cerrar menu
+  const toggleMenu = () => {
     mobileMenu.classList.toggle('active');
     mobileMenuToggle.classList.toggle('active');
-  });
+    // Prevenir scroll del body cuando el menu esta abierto
+    document.body.style.overflow = mobileMenu.classList.contains('active') ? 'hidden' : '';
+  };
+
+  mobileMenuToggle.addEventListener('click', toggleMenu);
+  closeButton.addEventListener('click', toggleMenu);
+
   // Cierra el menu al hacer click en un enlace
   mobileMenu.querySelectorAll('a').forEach(link => {
     link.addEventListener('click', () => {
       mobileMenu.classList.remove('active');
       mobileMenuToggle.classList.remove('active');
+      document.body.style.overflow = '';
     });
+  });
+
+  // Cierra el menu con la tecla Escape
+  document.addEventListener('keydown', (e) => {
+    if (e.key === 'Escape' && mobileMenu.classList.contains('active')) {
+      mobileMenu.classList.remove('active');
+      mobileMenuToggle.classList.remove('active');
+      document.body.style.overflow = '';
+    }
   });
 }
 
@@ -120,6 +143,20 @@ notificationSwitches.forEach(switchElement => {
 // Funcion para mostrar los terminos y condiciones (simulado)
 function showTermsModal() {
   alert('Aqui se mostraria el modal con los terminos y condiciones completos.');
+}
+
+// Funcion para descargar los terminos y condiciones
+function downloadTerms() {
+  // Crear un enlace temporal para descargar el archivo
+  const link = document.createElement('a');
+  link.href = '/assets/doc/LeyProteccionDeDatos.pdf';
+  link.download = 'TerminosYCondiciones_AguaConnect.pdf';
+  link.target = '_blank';
+  
+  // Simular el click para iniciar la descarga
+  document.body.appendChild(link);
+  link.click();
+  document.body.removeChild(link);
 }
 
 // Sistema de autenticacion en la pagina principal
