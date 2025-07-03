@@ -335,3 +335,19 @@ window.addEventListener('storage', (e) => {
     refreshUserSession();
   }
 });
+
+// Funciones para el footer
+
+// Funcion para manejar el newsletter
+function handleNewsletter(event) {
+  event.preventDefault();
+  const email = event.target.querySelector('input[type="email"]').value;
+  
+  if (email) {
+    // Simular envio del newsletter
+    setTimeout(() => {
+      alert('¡Gracias por suscribirte! Te mantendremos informado sobre las novedades de AguaConnect.');
+      event.target.reset();
+    }, 1000);
+  }
+};
