@@ -388,3 +388,68 @@ function handleNewsletter(event) {
     }, 1000);
   }
 };
+
+// Modal de mapa de fuentes de agua
+document.addEventListener('DOMContentLoaded', function() {
+  // Abrir modal al hacer click en la tarjeta
+  document.querySelectorAll('.featureCard').forEach(card => {
+    if (card.textContent.includes('Ver mapa de fuentes de agua cercanas')) {
+      card.style.cursor = 'pointer';
+      card.addEventListener('click', function() {
+        document.getElementById('modalMapa').style.display = 'flex';
+      });
+    }
+  });
+
+  // Cerrar modal
+  document.getElementById('cerrarModalMapa').onclick = function() {
+    document.getElementById('modalMapa').style.display = 'none';
+  };
+
+  // Cerrar modal al hacer click fuera del contenido
+  document.getElementById('modalMapa').onclick = function(e) {
+    if (e.target === this) {
+      this.style.display = 'none';
+    }
+  };
+  
+  // Manejo de filtros
+  document.querySelectorAll('.filter-option').forEach(option => {
+    option.addEventListener('click', function() {
+      // Quitar clase active de todos los filtros
+      document.querySelectorAll('.filter-option').forEach(opt => {
+        opt.classList.remove('active');
+      });
+      // Agregar clase active al filtro seleccionado
+      this.classList.add('active');
+      
+      // Aquí se podría agregar lógica para filtrar los puntos en el mapa
+      // Por ahora solo mostramos un mensaje de ejemplo
+      console.log('Filtro seleccionado:', this.textContent.trim());
+    });
+  });
+  
+  // Botón de registrar fuente
+  const registerBtn = document.querySelector('.modal-register-btn');
+  if (registerBtn) {
+    registerBtn.addEventListener('click', function() {
+      alert('En la app real podrías registrar una nueva fuente de agua.');
+    });
+  }
+  
+  // Navegación inferior
+  document.querySelectorAll('.nav-item').forEach(item => {
+    item.addEventListener('click', function() {
+      // Quitar clase active de todos los items
+      document.querySelectorAll('.nav-item').forEach(navItem => {
+        navItem.classList.remove('active');
+      });
+      // Agregar clase active al item seleccionado
+      this.classList.add('active');
+      
+      // Aquí se podría agregar lógica para cambiar de sección
+      const section = this.querySelector('span').textContent;
+      console.log('Sección seleccionada:', section);
+    });
+  });
+});

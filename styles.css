@@ -1405,6 +1405,1056 @@ body.menu-open {
   font-family: var(--font-primary);
 }
 
+/*-----------------------------------*\
+  #modal-mapa
+\*-----------------------------------*/
+.modal-mapa {
+  display: none;
+  position: fixed;
+  z-index: 9999;
+  left: 0;
+  top: 0;
+  width: 100vw;
+  height: 100vh;
+  background: rgba(0, 0, 0, 0.5);
+  justify-content: center;
+  align-items: center;
+}
+.modal-mapa-content {
+  background: #fff;
+  border-radius: 16px;
+  padding: 20px 20px 0 20px;
+  position: relative;
+  max-width: 400px;
+  width: 90vw;
+  box-shadow: 0 4px 24px rgba(0, 0, 0, 0.18);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+.modal-mapa-close {
+  position: absolute;
+  top: 12px;
+  right: 18px;
+  font-size: 2rem;
+  color: #333;
+  cursor: pointer;
+  z-index: 10;
+}
+
+.modal-mapa-title {
+  width: 100%;
+  text-align: center;
+  margin-bottom: 16px;
+  padding-top: 8px;
+}
+
+.modal-mapa-title h3 {
+  color: #333;
+  font-size: 1.1rem;
+  font-weight: 600;
+  margin: 0;
+  font-family: var(--font-primary);
+}
+
+.modal-mapa-header {
+  width: 100%;
+  margin-bottom: 16px;
+}
+.modal-search-container {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  margin-bottom: 12px;
+}
+.modal-search-bar {
+  flex: 1;
+  background: #f2f2f2;
+  border-radius: 20px;
+  padding: 8px 16px;
+  display: flex;
+  align-items: center;
+}
+.modal-search-bar i {
+  color: #888;
+  margin-right: 10px;
+}
+.modal-search-input {
+  border: none;
+  background: transparent;
+  flex: 1;
+  font-size: 0.9rem;
+  outline: none;
+}
+.modal-filter {
+  width: 36px;
+  height: 36px;
+  background: #f2f2f2;
+  border-radius: 50%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  cursor: pointer;
+}
+.modal-filter i {
+  color: #888;
+}
+
+.modal-filter-options {
+  display: flex;
+  overflow-x: auto;
+  gap: 10px;
+  padding-bottom: 6px;
+  scrollbar-width: none;
+}
+.modal-filter-options::-webkit-scrollbar {
+  display: none;
+}
+.filter-option {
+  padding: 6px 14px;
+  background: #f2f2f2;
+  border-radius: 16px;
+  font-size: 0.85rem;
+  white-space: nowrap;
+  cursor: pointer;
+}
+.filter-option.active {
+  background: #1cb0f6;
+  color: white;
+}
+
+.modal-mapa-img-container {
+  width: 100%;
+  max-width: 350px;
+  margin: 0 auto;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.modal-mapa-bg {
+  position: relative;
+  width: 100%;
+  background: #cceafd;
+  border-radius: 12px;
+  overflow: hidden;
+  padding: 18px 0 18px 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.modal-mapa-img {
+  width: 90%;
+  max-width: 280px;
+  border-radius: 8px;
+  display: block;
+  margin: 0 auto;
+}
+.modal-mapa-bg i {
+  position: absolute;
+  font-size: 2.2rem;
+  transform: translate(-50%, -100%);
+  cursor: pointer;
+  z-index: 2;
+}
+.fuente {
+  color: #0099ff;
+  text-shadow: 0 0 4px #fff;
+}
+.alerta {
+  color: #1cb0f6;
+  background: #fff;
+  border-radius: 50%;
+  padding: 2px 4px 2px 4px;
+  box-shadow: 0 0 6px #b3e0fc;
+  text-shadow: 0 0 4px #fff;
+}
+
+/* Sección de fuentes contaminadas */
+.modal-contaminadas {
+  width: 100%;
+  margin-top: 20px;
+}
+.modal-contaminadas h3 {
+  font-size: 1.1rem;
+  margin-bottom: 10px;
+  font-weight: 600;
+}
+.contaminada-item {
+  display: flex;
+  align-items: center;
+  background: #f2f2f2;
+  border-radius: 10px;
+  padding: 12px;
+  margin-bottom: 10px;
+}
+.alerta-icon {
+  color: #1cb0f6;
+  font-size: 1.5rem;
+  margin-right: 12px;
+}
+.contaminada-info {
+  flex: 1;
+}
+.contaminada-info p {
+  margin: 0 0 5px 0;
+  font-size: 0.9rem;
+}
+.contaminada-bar {
+  height: 6px;
+  width: 100%;
+  background: #e0e0e0;
+  border-radius: 3px;
+  overflow: hidden;
+}
+.contaminada-bar::before {
+  content: "";
+  display: block;
+  height: 100%;
+  width: 75%;
+  background: #1cb0f6;
+  border-radius: 3px;
+}
+
+/* Botón de registrar fuente */
+.modal-register-btn {
+  width: 100%;
+  background: #2d4b9a;
+  color: white;
+  border: none;
+  border-radius: 8px;
+  padding: 12px;
+  font-size: 1rem;
+  font-weight: 600;
+  cursor: pointer;
+  margin: 16px 0;
+  transition: background 0.2s;
+}
+.modal-register-btn:hover {
+  background: #1e3a7d;
+}
+
+/* Nota de ejemplo */
+.modal-example-note {
+  width: 100%;
+  background: #f9f9f9;
+  border-left: 3px solid #1cb0f6;
+  padding: 10px;
+  margin-bottom: 16px;
+  border-radius: 4px;
+}
+.modal-example-note p {
+  margin: 0;
+  font-size: 0.8rem;
+  color: #555;
+  display: flex;
+  align-items: center;
+}
+.modal-example-note i {
+  color: #1cb0f6;
+  margin-right: 8px;
+}
+
+.modal-mapa-leyenda {
+  margin: 16px 0;
+  text-align: center;
+  font-size: 1rem;
+  color: #222;
+  display: flex;
+  justify-content: center;
+  gap: 32px;
+}
+.modal-mapa-leyenda span {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+}
+
+.modal-bottom-nav {
+  width: 100%;
+  display: flex;
+  justify-content: space-around;
+  background: #fff;
+  border-top: 1px solid #eee;
+  padding: 12px 0;
+  margin-top: 10px;
+}
+.nav-item {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  cursor: pointer;
+}
+.nav-item i {
+  font-size: 1.2rem;
+  color: #888;
+  margin-bottom: 4px;
+}
+.nav-item span {
+  font-size: 0.75rem;
+  color: #888;
+}
+.nav-item.active i,
+.nav-item.active span {
+  color: #1cb0f6;
+}
+
+@media (max-width: 480px) {
+  .modal-mapa-content {
+    max-width: 95vw;
+    width: 95vw;
+    padding: 12px 12px 0 12px;
+    margin: 20px auto;
+    max-height: 85vh;
+    overflow-y: auto;
+  }
+
+  .modal-mapa-title {
+    margin-bottom: 12px;
+    padding-top: 4px;
+  }
+
+  .modal-mapa-title h3 {
+    font-size: 0.95rem;
+    line-height: 1.2;
+  }
+
+  .modal-mapa-header {
+    margin-bottom: 12px;
+  }
+
+  .modal-search-container {
+    gap: 8px;
+    margin-bottom: 10px;
+  }
+
+  .modal-search-bar {
+    padding: 6px 12px;
+    border-radius: 16px;
+  }
+
+  .modal-search-input {
+    font-size: 0.85rem;
+  }
+
+  .modal-filter {
+    width: 32px;
+    height: 32px;
+  }
+
+  .filter-option {
+    padding: 4px 10px;
+    font-size: 0.8rem;
+  }
+
+  .modal-mapa-img-container {
+    max-width: 100%;
+    margin-bottom: 12px;
+  }
+
+  .modal-mapa-bg {
+    padding: 12px 0;
+  }
+
+  .modal-mapa-img {
+    max-width: 90%;
+    width: 90%;
+  }
+
+  .modal-mapa-bg i {
+    font-size: 1.6rem;
+  }
+
+  .modal-contaminadas {
+    margin-top: 12px;
+  }
+
+  .modal-contaminadas h3 {
+    font-size: 1rem;
+    margin-bottom: 8px;
+  }
+
+  .contaminada-item {
+    padding: 10px;
+    margin-bottom: 8px;
+  }
+
+  .alerta-icon {
+    font-size: 1.3rem;
+    margin-right: 10px;
+  }
+
+  .contaminada-info p {
+    font-size: 0.85rem;
+  }
+
+  .modal-register-btn {
+    padding: 10px;
+    font-size: 0.9rem;
+    margin: 12px 0;
+  }
+
+  .modal-example-note {
+    margin-bottom: 12px;
+    padding: 8px;
+  }
+
+  .modal-example-note p {
+    font-size: 0.75rem;
+  }
+
+  .modal-mapa-leyenda {
+    margin: 12px 0;
+    font-size: 0.85rem;
+    gap: 16px;
+    flex-wrap: wrap;
+  }
+
+  .modal-bottom-nav {
+    padding: 10px 0;
+    margin-top: 8px;
+  }
+
+  .nav-item i {
+    font-size: 1.1rem;
+  }
+
+  .nav-item span {
+    font-size: 0.7rem;
+  }
+}
+
+@media (max-width: 390px) {
+  .modal-mapa-content {
+    margin: 10px auto;
+    max-height: 90vh;
+  }
+
+  .modal-mapa-title h3 {
+    font-size: 0.9rem;
+  }
+
+  .modal-search-input {
+    font-size: 0.8rem;
+  }
+
+  .filter-option {
+    font-size: 0.75rem;
+    padding: 3px 8px;
+  }
+
+  .modal-mapa-leyenda {
+    font-size: 0.8rem;
+    gap: 12px;
+  }
+}
+
+@media (max-width: 360px) {
+  .modal-mapa-content {
+    padding: 10px 10px 0 10px;
+    margin: 8px auto;
+  }
+
+  .modal-mapa-close {
+    font-size: 1.8rem;
+    top: 8px;
+    right: 12px;
+  }
+
+  .modal-mapa-title h3 {
+    font-size: 0.85rem;
+  }
+
+  .modal-search-bar {
+    padding: 5px 10px;
+  }
+
+  .modal-filter {
+    width: 30px;
+    height: 30px;
+  }
+
+  .modal-mapa-bg i {
+    font-size: 1.4rem;
+  }
+
+  .modal-contaminadas h3 {
+    font-size: 0.95rem;
+  }
+
+  .modal-register-btn {
+    font-size: 0.85rem;
+  }
+
+  .modal-example-note p {
+    font-size: 0.7rem;
+  }
+
+  .modal-mapa-leyenda {
+    font-size: 0.75rem;
+    gap: 8px;
+  }
+
+  .nav-item i {
+    font-size: 1rem;
+  }
+
+  .nav-item span {
+    font-size: 0.65rem;
+  }
+}
+
+/* iPhone SE y pantallas muy pequeñas */
+@media (max-width: 320px) {
+  .modal-mapa-content {
+    padding: 8px 8px 0 8px;
+    margin: 5px auto;
+    max-height: 95vh;
+  }
+
+  .modal-mapa-close {
+    font-size: 1.6rem;
+    top: 6px;
+    right: 10px;
+  }
+
+  .modal-mapa-title h3 {
+    font-size: 0.8rem;
+  }
+
+  .modal-search-bar {
+    padding: 4px 8px;
+  }
+
+  .modal-search-input {
+    font-size: 0.75rem;
+  }
+
+  .modal-filter {
+    width: 28px;
+    height: 28px;
+  }
+
+  .filter-option {
+    font-size: 0.7rem;
+    padding: 2px 6px;
+  }
+
+  .modal-mapa-bg {
+    padding: 8px 0;
+  }
+
+  .modal-mapa-bg i {
+    font-size: 1.2rem;
+  }
+
+  .modal-contaminadas h3 {
+    font-size: 0.9rem;
+  }
+
+  .contaminada-item {
+    padding: 8px;
+  }
+
+  .alerta-icon {
+    font-size: 1.2rem;
+    margin-right: 8px;
+  }
+
+  .contaminada-info p {
+    font-size: 0.8rem;
+  }
+
+  .modal-register-btn {
+    padding: 8px;
+    font-size: 0.8rem;
+    margin: 10px 0;
+  }
+
+  .modal-example-note {
+    padding: 6px;
+  }
+
+  .modal-example-note p {
+    font-size: 0.65rem;
+  }
+
+  .modal-mapa-leyenda {
+    font-size: 0.7rem;
+    gap: 6px;
+    margin: 8px 0;
+  }
+
+  .modal-bottom-nav {
+    padding: 8px 0;
+    margin-top: 6px;
+  }
+
+  .nav-item i {
+    font-size: 0.9rem;
+  }
+
+  .nav-item span {
+    font-size: 0.6rem;
+  }
+}
+
+/* Estilos adicionales para móviles */
+@media (max-width: 480px) {
+  .modal-mapa {
+    padding: 10px;
+  }
+
+  .modal-mapa-content {
+    border-radius: 12px;
+  }
+
+  .modal-search-bar,
+  .modal-filter,
+  .filter-option,
+  .modal-register-btn,
+  .nav-item {
+    -webkit-tap-highlight-color: transparent;
+    touch-action: manipulation;
+  }
+
+  .modal-search-bar:focus-within {
+    background: #e8e8e8;
+    transform: scale(1.02);
+    transition: all 0.2s ease;
+  }
+
+  .filter-option:active {
+    transform: scale(0.95);
+    transition: transform 0.1s ease;
+  }
+
+  .modal-register-btn:active {
+    transform: scale(0.98);
+    transition: transform 0.1s ease;
+  }
+
+  .nav-item:active {
+    transform: scale(0.95);
+    transition: transform 0.1s ease;
+  }
+
+  .modal-mapa-close:active {
+    transform: scale(0.9);
+    transition: transform 0.1s ease;
+  }
+
+  .modal-mapa-bg i:active {
+    transform: translate(-50%, -100%) scale(0.9);
+    transition: transform 0.1s ease;
+  }
+}
+
+/*-----------------------------------*\
+  #modales-features
+\*-----------------------------------*/
+
+.modal-feature {
+  display: none;
+  position: fixed;
+  z-index: 9999;
+  left: 0;
+  top: 0;
+  width: 100vw;
+  height: 100vh;
+  background: rgba(0, 0, 0, 0.5);
+  justify-content: center;
+  align-items: center;
+}
+
+.modal-feature-content {
+  background: #fff;
+  border-radius: 16px;
+  padding: 20px 20px 0 20px;
+  position: relative;
+  max-width: 450px;
+  width: 90vw;
+  max-height: 85vh;
+  overflow-y: auto;
+  box-shadow: 0 4px 24px rgba(0, 0, 0, 0.18);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.modal-feature-close {
+  position: absolute;
+  top: 12px;
+  right: 18px;
+  font-size: 2rem;
+  color: #333;
+  cursor: pointer;
+  z-index: 10;
+}
+
+.modal-feature-title {
+  width: 100%;
+  text-align: center;
+  margin-bottom: 16px;
+  padding-top: 8px;
+}
+
+.modal-feature-title h3 {
+  color: #333;
+  font-size: 1.1rem;
+  font-weight: 600;
+  margin: 0;
+  font-family: var(--font-primary);
+}
+
+/* Estilos para Modal de Compras Grupales */
+.modal-compras-container {
+  width: 100%;
+  margin-bottom: 16px;
+}
+
+.compras-section {
+  margin-bottom: 20px;
+  padding: 16px;
+  background: #f8f9fa;
+  border-radius: 12px;
+}
+
+.compras-header {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  margin-bottom: 16px;
+}
+
+.compras-header i {
+  color: #2d4b9a;
+  font-size: 1.2rem;
+}
+
+.compras-header h4 {
+  color: #333;
+  font-size: 1rem;
+  font-weight: 600;
+  margin: 0;
+}
+
+.form-group {
+  margin-bottom: 12px;
+}
+
+.form-group label {
+  display: block;
+  font-size: 0.9rem;
+  color: #555;
+  margin-bottom: 6px;
+  font-weight: 500;
+}
+
+.form-input,
+.form-select {
+  width: 100%;
+  padding: 8px 12px;
+  border: 1px solid #ddd;
+  border-radius: 8px;
+  font-size: 0.9rem;
+  background: #fff;
+  transition: border-color 0.2s ease;
+}
+
+.form-input:focus,
+.form-select:focus {
+  outline: none;
+  border-color: #2d4b9a;
+}
+
+.btn-primary {
+  background: #2d4b9a;
+  color: white;
+  border: none;
+  padding: 10px 20px;
+  border-radius: 8px;
+  font-size: 0.9rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: background 0.2s ease;
+  width: 100%;
+}
+
+.btn-primary:hover {
+  background: #1e3a7d;
+}
+
+.btn-secondary {
+  background: #6c757d;
+  color: white;
+  border: none;
+  padding: 10px 20px;
+  border-radius: 8px;
+  font-size: 0.9rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: background 0.2s ease;
+  width: 100%;
+  margin-bottom: 8px;
+}
+
+.btn-secondary:hover {
+  background: #5a6268;
+}
+
+/* Estilos para Modal de Alertas */
+.modal-alertas-container {
+  width: 100%;
+  margin-bottom: 16px;
+}
+
+.alertas-header {
+  margin-bottom: 16px;
+}
+
+.alertas-header h4 {
+  color: #333;
+  font-size: 1.1rem;
+  font-weight: 600;
+  margin-bottom: 12px;
+}
+
+.alertas-search {
+  position: relative;
+  display: flex;
+  align-items: center;
+  background: #f2f2f2;
+  border-radius: 20px;
+  padding: 8px 16px;
+}
+
+.alertas-search i {
+  color: #888;
+  margin-right: 10px;
+}
+
+.search-input {
+  border: none;
+  background: transparent;
+  flex: 1;
+  font-size: 0.9rem;
+  outline: none;
+}
+
+.filtros-alertas {
+  margin-bottom: 20px;
+}
+
+.filtros-alertas h5 {
+  color: #333;
+  font-size: 1rem;
+  font-weight: 600;
+  margin-bottom: 12px;
+}
+
+.filtros-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 10px;
+}
+
+.filtro-item {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.checkbox-input {
+  width: 16px;
+  height: 16px;
+  accent-color: #2d4b9a;
+}
+
+.filtro-item label {
+  font-size: 0.9rem;
+  color: #555;
+  margin: 0;
+}
+
+.alertas-list {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.alerta-item {
+  background: #f8f9fa;
+  border-radius: 12px;
+  padding: 16px;
+  border-left: 4px solid #ff6b6b;
+}
+
+.alerta-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 8px;
+}
+
+.alerta-header h6 {
+  color: #333;
+  font-size: 1rem;
+  font-weight: 600;
+  margin: 0;
+}
+
+.btn-detalles {
+  background: #2d4b9a;
+  color: white;
+  border: none;
+  padding: 6px 12px;
+  border-radius: 6px;
+  font-size: 0.8rem;
+  cursor: pointer;
+  transition: background 0.2s ease;
+}
+
+.btn-detalles:hover {
+  background: #1e3a7d;
+}
+
+.alerta-fuente {
+  font-size: 0.9rem;
+  color: #555;
+  margin: 4px 0;
+}
+
+.alerta-fecha {
+  font-size: 0.85rem;
+  color: #888;
+  margin: 4px 0;
+}
+
+/* Estilos para Modal de Pagos */
+.modal-pagos-container {
+  width: 100%;
+  margin-bottom: 16px;
+}
+
+.pagos-header {
+  margin-bottom: 16px;
+}
+
+.pagos-header h4 {
+  color: #333;
+  font-size: 1.1rem;
+  font-weight: 600;
+  margin: 0;
+  text-align: center;
+}
+
+.metodo-pago {
+  background: #f8f9fa;
+  border-radius: 12px;
+  padding: 20px;
+}
+
+.metodo-pago h5 {
+  color: #333;
+  font-size: 1rem;
+  font-weight: 600;
+  margin-bottom: 16px;
+  text-align: center;
+}
+
+.pagos-buttons {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  margin-top: 16px;
+}
+
+/* Responsive para modales de features */
+@media (max-width: 480px) {
+  .modal-feature-content {
+    max-width: 95vw;
+    width: 95vw;
+    padding: 12px 12px 0 12px;
+    margin: 20px auto;
+    max-height: 90vh;
+  }
+
+  .modal-feature-title h3 {
+    font-size: 1rem;
+  }
+
+  .compras-section {
+    padding: 12px;
+  }
+
+  .form-input,
+  .form-select {
+    padding: 8px 10px;
+    font-size: 0.85rem;
+  }
+
+  .btn-primary,
+  .btn-secondary {
+    padding: 8px 16px;
+    font-size: 0.85rem;
+  }
+
+  .filtros-grid {
+    grid-template-columns: 1fr;
+    gap: 8px;
+  }
+
+  .alerta-item {
+    padding: 12px;
+  }
+
+  .alerta-header {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 8px;
+  }
+
+  .btn-detalles {
+    align-self: flex-end;
+  }
+
+  .metodo-pago {
+    padding: 16px;
+  }
+}
+
+@media (max-width: 360px) {
+  .modal-feature-content {
+    padding: 10px 10px 0 10px;
+  }
+
+  .modal-feature-close {
+    font-size: 1.8rem;
+    top: 8px;
+    right: 12px;
+  }
+
+  .modal-feature-title h3 {
+    font-size: 0.9rem;
+  }
+
+  .compras-header h4,
+  .alertas-header h4,
+  .pagos-header h4 {
+    font-size: 0.95rem;
+  }
+
+  .form-input,
+  .form-select {
+    font-size: 0.8rem;
+  }
+
+  .btn-primary,
+  .btn-secondary {
+    font-size: 0.8rem;
+  }
+}
+
 .featureCard p {
   color: var(--color-text);
   line-height: 1.6;

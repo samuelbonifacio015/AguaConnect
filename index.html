@@ -344,6 +344,103 @@
             </p>
           </div>
 
+          <!-- Modal Mapa de Fuentes de Agua Cercanas -->
+          <div id="modalMapa" class="modal-mapa">
+            <div class="modal-mapa-content">
+              <span class="modal-mapa-close" id="cerrarModalMapa">&times;</span>
+              
+              <!-- Título del modal -->
+              <div class="modal-mapa-title">
+                <h3>Ver mapas de fuentes de agua cercanas</h3>
+              </div>
+              
+              <!-- Barra de búsqueda y filtros -->
+              <div class="modal-mapa-header">
+                <div class="modal-search-container">
+                  <div class="modal-search-bar">
+                    <i class="fa-solid fa-magnifying-glass"></i>
+                    <input type="text" placeholder="Buscar agua" class="modal-search-input">
+                  </div>
+                  <div class="modal-filter">
+                    <i class="fa-solid fa-filter"></i>
+                  </div>
+                </div>
+                
+                <!-- Opciones de filtro -->
+                <div class="modal-filter-options">
+                  <div class="filter-option active">
+                    <span>Todos</span>
+                  </div>
+                  <div class="filter-option">
+                    <span>Pozo</span>
+                  </div>
+                  <div class="filter-option">
+                    <span>Manantial</span>
+                  </div>
+                  <div class="filter-option">
+                    <span>Tanque/ Cisterna</span>
+                  </div>
+                </div>
+              </div>
+              
+              <div class="modal-mapa-img-container">
+                <div class="modal-mapa-bg">
+                  <img src="assets/images/mapa.jpeg" alt="Mapa de Lima" class="modal-mapa-img" />
+                  <!-- Iconos simulando fuentes y alertas -->
+                  <i class="fa-solid fa-map-pin fuente" style="top: 55%; left: 38%;" title="Fuente de agua"></i>
+                  <i class="fa-solid fa-map-pin fuente" style="top: 65%; left: 42%;" title="Fuente de agua"></i>
+                  <i class="fa-solid fa-triangle-exclamation alerta" style="top: 30%; left: 25%;" title="Fuente contaminada"></i>
+                  <i class="fa-solid fa-triangle-exclamation alerta" style="top: 20%; left: 60%;" title="Fuente contaminada"></i>
+                </div>
+              </div>
+              
+              <!-- Sección de fuentes contaminadas -->
+              <div class="modal-contaminadas">
+                <h3>Fuentes contaminadas</h3>
+                <div class="contaminada-item">
+                  <i class="fa-solid fa-triangle-exclamation alerta-icon"></i>
+                  <div class="contaminada-info">
+                    <p>Agua turbia en Fuente 1</p>
+                    <div class="contaminada-bar"></div>
+                  </div>
+                </div>
+              </div>
+              
+              <!-- Botón de registrar fuente -->
+              <button class="modal-register-btn">Registrar fuente</button>
+              
+              <!-- Nota de ejemplo -->
+              <div class="modal-example-note">
+                <p><i class="fa-solid fa-info-circle"></i> Esta es una visualización de ejemplo. En la app real, podrás ver fuentes de agua verificadas en tu área.</p>
+              </div>
+              
+              <div class="modal-mapa-leyenda">
+                <span><i class="fa-solid fa-map-pin fuente"></i> Fuente de agua</span>&nbsp;&nbsp;
+                <span><i class="fa-solid fa-triangle-exclamation alerta"></i> Fuente contaminada</span>
+              </div>
+              
+              <!-- Navegación inferior -->
+              <div class="modal-bottom-nav">
+                <div class="nav-item active">
+                  <i class="fa-solid fa-map"></i>
+                  <span>Mapa</span>
+                </div>
+                <div class="nav-item">
+                  <i class="fa-solid fa-triangle-exclamation"></i>
+                  <span>Alertas</span>
+                </div>
+                <div class="nav-item">
+                  <i class="fa-solid fa-users"></i>
+                  <span>Mi Comunidad</span>
+                </div>
+                <div class="nav-item">
+                  <i class="fa-solid fa-user"></i>
+                  <span>Perfil</span>
+                </div>
+              </div>
+            </div>
+          </div>
+
           <div class="featureCard">
             <div class="featureIcon">
               <i class="fa-solid fa-share-nodes"></i>
@@ -364,6 +461,100 @@
               Organiza y participa en compras colectivas para obtener mejores
               precios y condiciones.
             </p>
+          </div>
+
+          <!-- Modal Compras Grupales -->
+          <div id="modalCompras" class="modal-feature">
+            <div class="modal-feature-content">
+              <span class="modal-feature-close" id="cerrarModalCompras">&times;</span>
+              
+              <div class="modal-feature-title">
+                <h3>Coordinar compras grupales</h3>
+              </div>
+              
+              <div class="modal-compras-container">
+                <div class="compras-section">
+                  <div class="compras-header">
+                    <i class="fa-solid fa-users"></i>
+                    <h4>Grupos disponibles</h4>
+                  </div>
+                  
+                  <div class="grupo-form">
+                    <div class="form-group">
+                      <label for="nombreGrupo">Nombre del grupo:</label>
+                      <input type="text" id="nombreGrupo" class="form-input" placeholder="Ingresa el nombre del grupo">
+                    </div>
+                    
+                    <div class="form-group">
+                      <label for="numeroMiembros">Número de miembros:</label>
+                      <input type="number" id="numeroMiembros" class="form-input" placeholder="Cantidad de miembros">
+                    </div>
+                    
+                    <div class="form-group">
+                      <label for="costoLitro">Costo estimado por litro:</label>
+                      <input type="text" id="costoLitro" class="form-input" placeholder="S/. 0.00">
+                    </div>
+                    
+                    <button class="btn-primary">Unirme</button>
+                  </div>
+                </div>
+                
+                <div class="compras-section">
+                  <div class="compras-header">
+                    <i class="fa-solid fa-shopping-cart"></i>
+                    <h4>Mis compras</h4>
+                  </div>
+                  
+                  <div class="compra-item">
+                                         <div class="compra-info">
+                       <div class="form-group">
+                         <label for="fechaCompra">Fecha de compra:</label>
+                         <input type="date" id="fechaCompra" class="form-input">
+                       </div>
+                       
+                       <div class="form-group">
+                         <label for="montoPagado">Monto total pagado:</label>
+                         <input type="text" id="montoPagado" class="form-input" placeholder="S/. 0.00">
+                       </div>
+                       
+                       <div class="form-group">
+                         <label for="puntoRecoleccion">Punto de recolección:</label>
+                         <input type="text" id="puntoRecoleccion" class="form-input" placeholder="Ubicación">
+                       </div>
+                       
+                       <div class="form-group">
+                         <label for="estadoCompra">Estado:</label>
+                         <select id="estadoCompra" class="form-select">
+                           <option>Pendiente</option>
+                           <option>Confirmado</option>
+                           <option>Entregado</option>
+                           <option>Cancelado</option>
+                         </select>
+                       </div>
+                     </div>
+                  </div>
+                </div>
+              </div>
+              
+              <div class="modal-bottom-nav">
+                <div class="nav-item active">
+                  <i class="fa-solid fa-map"></i>
+                  <span>Mapa</span>
+                </div>
+                <div class="nav-item">
+                  <i class="fa-solid fa-triangle-exclamation"></i>
+                  <span>Alertas</span>
+                </div>
+                <div class="nav-item">
+                  <i class="fa-solid fa-users"></i>
+                  <span>Mi Comunidad</span>
+                </div>
+                <div class="nav-item">
+                  <i class="fa-solid fa-user"></i>
+                  <span>Perfil</span>
+                </div>
+              </div>
+            </div>
           </div>
 
           <div class="featureCard">
@@ -388,6 +579,97 @@
             </p>
           </div>
 
+          <!-- Modal Alertas -->
+          <div id="modalAlertas" class="modal-feature">
+            <div class="modal-feature-content">
+              <span class="modal-feature-close" id="cerrarModalAlertas">&times;</span>
+              
+              <div class="modal-feature-title">
+                <h3>Alertas de escasez y contaminación</h3>
+              </div>
+              
+              <div class="modal-alertas-container">
+                <div class="alertas-header">
+                  <h4>Alertas</h4>
+                  <div class="alertas-search">
+                    <i class="fa-solid fa-magnifying-glass"></i>
+                    <input type="text" placeholder="Buscar fuente o problema" class="search-input">
+                  </div>
+                </div>
+                
+                <div class="filtros-alertas">
+                  <h5>Filtros por tipo de alerta</h5>
+                  <div class="filtros-grid">
+                    <div class="filtro-item">
+                      <input type="checkbox" id="aguaTurbia" class="checkbox-input">
+                      <label for="aguaTurbia">Agua turbia</label>
+                    </div>
+                    <div class="filtro-item">
+                      <input type="checkbox" id="contaminacion" class="checkbox-input">
+                      <label for="contaminacion">Contaminación</label>
+                    </div>
+                    <div class="filtro-item">
+                      <input type="checkbox" id="flujoBajo" class="checkbox-input">
+                      <label for="flujoBajo">Flujo bajo</label>
+                    </div>
+                    <div class="filtro-item">
+                      <input type="checkbox" id="otraAlerta" class="checkbox-input">
+                      <label for="otraAlerta">Otra</label>
+                    </div>
+                  </div>
+                </div>
+                
+                <div class="alertas-list">
+                  <div class="alerta-item">
+                    <div class="alerta-header">
+                      <h6>Agua turbia</h6>
+                      <button class="btn-detalles">Ver detalles</button>
+                    </div>
+                    <p class="alerta-fuente">Fuente 1</p>
+                    <p class="alerta-fecha">Reportado el 24 de abril</p>
+                  </div>
+                  
+                  <div class="alerta-item">
+                    <div class="alerta-header">
+                      <h6>Contaminación</h6>
+                      <button class="btn-detalles">Ver detalles</button>
+                    </div>
+                    <p class="alerta-fuente">Fuente 2</p>
+                    <p class="alerta-fecha">Reportado el 12 de abril</p>
+                  </div>
+                  
+                  <div class="alerta-item">
+                    <div class="alerta-header">
+                      <h6>Flujo bajo</h6>
+                      <button class="btn-detalles">Ver detalles</button>
+                    </div>
+                    <p class="alerta-fuente">Fuente 3</p>
+                    <p class="alerta-fecha">Reportado el 18 de abril</p>
+                  </div>
+                </div>
+              </div>
+              
+              <div class="modal-bottom-nav">
+                <div class="nav-item">
+                  <i class="fa-solid fa-map"></i>
+                  <span>Mapa</span>
+                </div>
+                <div class="nav-item active">
+                  <i class="fa-solid fa-triangle-exclamation"></i>
+                  <span>Alertas</span>
+                </div>
+                <div class="nav-item">
+                  <i class="fa-solid fa-users"></i>
+                  <span>Mi Comunidad</span>
+                </div>
+                <div class="nav-item">
+                  <i class="fa-solid fa-user"></i>
+                  <span>Perfil</span>
+                </div>
+              </div>
+            </div>
+          </div>
+
           <div class="featureCard">
             <div class="featureIcon">
               <i class="fa-solid fa-wallet"></i>
@@ -397,6 +679,71 @@
               Realiza pagos seguros para compras grupales de agua directamente
               desde la app con tu billetera digital preferida.
             </p>
+          </div>
+
+          <!-- Modal Pagos -->
+          <div id="modalPagos" class="modal-feature">
+            <div class="modal-feature-content">
+              <span class="modal-feature-close" id="cerrarModalPagos">&times;</span>
+              
+              <div class="modal-feature-title">
+                <h3>Pagos digitales comunitarios</h3>
+              </div>
+              
+              <div class="modal-pagos-container">
+                <div class="pagos-header">
+                  <h4>Método de pago</h4>
+                </div>
+                
+                <div class="metodo-pago">
+                  <h5>Agregar Tarjeta de Crédito o Débito</h5>
+                  
+                  <div class="form-group">
+                    <label for="numeroTarjeta">Número de tarjeta</label>
+                    <input type="text" id="numeroTarjeta" class="form-input" placeholder="1234 5678 9012 3456">
+                  </div>
+                  
+                  <div class="form-group">
+                    <label for="fechaCaducidad">Fecha de caducidad</label>
+                    <input type="text" id="fechaCaducidad" class="form-input" placeholder="MM/AA">
+                  </div>
+                  
+                  <div class="form-group">
+                    <label for="cvc">CVC</label>
+                    <input type="text" id="cvc" class="form-input" placeholder="123">
+                  </div>
+                  
+                  <div class="form-group">
+                    <label for="nombreTarjeta">Nombre de la tarjeta</label>
+                    <input type="text" id="nombreTarjeta" class="form-input" placeholder="Nombre del titular">
+                  </div>
+                  
+                  <div class="pagos-buttons">
+                    <button class="btn-secondary">Guardar método de pago</button>
+                    <button class="btn-primary">Confirmar pago</button>
+                  </div>
+                </div>
+              </div>
+              
+              <div class="modal-bottom-nav">
+                <div class="nav-item">
+                  <i class="fa-solid fa-map"></i>
+                  <span>Mapa</span>
+                </div>
+                <div class="nav-item">
+                  <i class="fa-solid fa-triangle-exclamation"></i>
+                  <span>Alertas</span>
+                </div>
+                <div class="nav-item">
+                  <i class="fa-solid fa-users"></i>
+                  <span>Mi Comunidad</span>
+                </div>
+                <div class="nav-item active">
+                  <i class="fa-solid fa-user"></i>
+                  <span>Perfil</span>
+                </div>
+              </div>
+            </div>
           </div>
         </div>
       </div>
