@@ -452,4 +452,114 @@ document.addEventListener('DOMContentLoaded', function() {
       console.log('Sección seleccionada:', section);
     });
   });
+
+  // Modal de compras grupales
+  document.querySelectorAll('.featureCard').forEach(card => {
+    if (card.textContent.includes('Coordinar compras grupales')) {
+      card.style.cursor = 'pointer';
+      card.addEventListener('click', function() {
+        document.getElementById('modalCompras').style.display = 'flex';
+      });
+    }
+  });
+
+  // Cerrar modal de compras
+  const cerrarModalCompras = document.getElementById('cerrarModalCompras');
+  if (cerrarModalCompras) {
+    cerrarModalCompras.onclick = function() {
+      document.getElementById('modalCompras').style.display = 'none';
+    };
+  }
+
+  // Cerrar modal de compras al hacer click fuera del contenido
+  const modalCompras = document.getElementById('modalCompras');
+  if (modalCompras) {
+    modalCompras.onclick = function(e) {
+      if (e.target === this) {
+        this.style.display = 'none';
+      }
+    };
+  }
+
+  // Modal de alertas
+  document.querySelectorAll('.featureCard').forEach(card => {
+    if (card.textContent.includes('Recibir alertas de escasez o contaminación')) {
+      card.style.cursor = 'pointer';
+      card.addEventListener('click', function() {
+        document.getElementById('modalAlertas').style.display = 'flex';
+      });
+    }
+  });
+
+  // Cerrar modal de alertas
+  const cerrarModalAlertas = document.getElementById('cerrarModalAlertas');
+  if (cerrarModalAlertas) {
+    cerrarModalAlertas.onclick = function() {
+      document.getElementById('modalAlertas').style.display = 'none';
+    };
+  }
+
+  // Cerrar modal de alertas al hacer click fuera del contenido
+  const modalAlertas = document.getElementById('modalAlertas');
+  if (modalAlertas) {
+    modalAlertas.onclick = function(e) {
+      if (e.target === this) {
+        this.style.display = 'none';
+      }
+    };
+  }
+
+  // Modal de pagos
+  document.querySelectorAll('.featureCard').forEach(card => {
+    if (card.textContent.includes('Pagos digitales comunitarios')) {
+      card.style.cursor = 'pointer';
+      card.addEventListener('click', function() {
+        document.getElementById('modalPagos').style.display = 'flex';
+      });
+    }
+  });
+
+  // Cerrar modal de pagos
+  const cerrarModalPagos = document.getElementById('cerrarModalPagos');
+  if (cerrarModalPagos) {
+    cerrarModalPagos.onclick = function() {
+      document.getElementById('modalPagos').style.display = 'none';
+    };
+  }
+
+  // Cerrar modal de pagos al hacer click fuera del contenido
+  const modalPagos = document.getElementById('modalPagos');
+  if (modalPagos) {
+    modalPagos.onclick = function(e) {
+      if (e.target === this) {
+        this.style.display = 'none';
+      }
+    };
+  }
+
+  // Funcionalidad para botones de "Ver detalles" en alertas
+  document.querySelectorAll('.btn-detalles').forEach(btn => {
+    btn.addEventListener('click', function() {
+      alert('En la app real podrías ver los detalles completos de la alerta.');
+    });
+  });
+
+  // Funcionalidad para botón "Unirme" en compras grupales
+  const unirmeBtn = document.querySelector('.btn-primary');
+  if (unirmeBtn && unirmeBtn.textContent.includes('Unirme')) {
+    unirmeBtn.addEventListener('click', function() {
+      alert('En la app real podrías unirte al grupo de compras.');
+    });
+  }
+
+  // Funcionalidad para botones de pagos
+  document.addEventListener('click', function(e) {
+    if (e.target.classList.contains('btn-secondary') && e.target.textContent.includes('Guardar método de pago')) {
+      alert('En la app real podrías guardar tu método de pago.');
+    }
+    
+    if (e.target.classList.contains('btn-primary') && e.target.textContent.includes('Confirmar pago')) {
+      alert('En la app real podrías confirmar tu pago.');
+    }
+  });
 });
