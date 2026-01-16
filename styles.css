@@ -3888,17 +3888,6 @@ input:checked + .slider:before {
   }
 }
 
-/*-----------------------------------*\
-  #mini-footer
-\*-----------------------------------*/
-
-.miniFooter {
-  background-color: var(--color-dark);
-  padding: 1.5rem 1.25rem;
-  border-top: 3px solid var(--color-accent);
-  position: relative;
-}
-
 .footerContainer {
   max-width: 79.5rem;
   margin: 0 auto;
@@ -3989,9 +3978,6 @@ input:checked + .slider:before {
 }
 
 @media (min-width: 768px) {
-  .miniFooter {
-    padding: 2rem 1.25rem;
-  }
 
   .footerContent {
     gap: 2rem;
@@ -4012,18 +3998,9 @@ input:checked + .slider:before {
 }
 
 @media (min-width: 1024px) {
-  .miniFooter {
-    padding: 2.5rem 1.25rem;
-  }
 
   .footerContent {
     gap: 3rem;
-  }
-}
-
-@media (min-width: 1280px) {
-  .miniFooter {
-    padding: 3rem 1.25rem;
   }
 }
 
